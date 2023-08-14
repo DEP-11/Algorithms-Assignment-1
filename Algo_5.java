@@ -14,6 +14,12 @@ public class Algo_5 {
             char[] textToChar = text.toCharArray();
             String invertText = "";
             for (int i = 0; i < textToChar.length; i++) {
+                if(textToChar[i] > 128){
+                    System.out.println("Only ASCII characters. Enter again.");
+                    continue loop;
+                }
+            }
+            for (int i = 0; i < textToChar.length; i++) {
                 invertText = invertText + textToChar[textToChar.length-1-i];
                 
             }

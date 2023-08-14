@@ -17,11 +17,29 @@ public class Algo_8 {
          
                 
             }
-            char[] intersectionArr = intersection.toCharArray();
-            int[] new1 = new int[numA.length+numB.length-intersection.length()];
-            
             
         }
+        char[] intersectionArr = intersection.toCharArray();
+        int[] new1 = new int[numA.length+numB.length-intersection.length()];
+        for (int j = 0; j < numA.length; j++) {
+            new1[j] = numA[j];       
+            
+        }
+        int k = 1;
+        for (int i = 0; i < numB.length; i++) {
+            int a = numB[i];
+            for (int j = 0; j < numA.length; j++) {
+                int b = new1[j];
+                if(a != b){
+                    new1[numA.length-1+k] = a;
+                    k++;
+                }else continue;
+            }
+        }
+                
+                
+    
         System.out.println(intersection);
+        System.out.println(new1.toString());
     }
 }
